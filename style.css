@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Основной контейнер */
+.resume-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Левая колонка - профиль */
+.profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: 30px 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 4px solid #4facfe;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.avatar img:hover {
+    transform: scale(1.02);
+    border-color: #ff6b6b;
+}
+
+.name-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.first-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e2a3e;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.last-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4a6fa5;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.last-name.edited {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); background: transparent; }
+    50% { transform: scale(1.02); background: #e0f2fe; }
+}
+
+.job-title {
+    font-size: 1rem;
+    color: #5a6e8a;
+    margin-top: 8px;
+    background: #eef2f7;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.info-section {
+    margin-top: 25px;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.info-item {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #2d3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item span:first-child {
+    font-weight: 700;
+    color: #0f2b3d;
+    min-width: 70px;
+}
+
+/* Правая колонка - контент */
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    border-left: 5px solid #4facfe;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.02);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(102, 126, 234, 0.4);
+    cursor: default;
+}
+
+/* Поле ввода и кнопки */
+.input-group {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1e2a3e;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+.btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+.btn-age {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: #1a3c2c;
+}
+
+.btn-age:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 249, 215, 0.4);
+}
+
+/* Секция с возрастом (задание 3) */
+.age-section {
+    background: linear-gradient(135deg, #fef9e6 0%, #fff5e0 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ffe0a3;
+}
+
+.age-result {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #b45309;
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .first-name {
+        font-size: 1.6rem;
+    }
+    .last-name {
+        font-size: 1.4rem;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+}
